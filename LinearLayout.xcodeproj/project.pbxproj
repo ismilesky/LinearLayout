@@ -15,6 +15,9 @@
 		575581431ED43B83008F3071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575581411ED43B83008F3071 /* LaunchScreen.storyboard */; };
 		5755814E1ED43B83008F3071 /* LinearLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755814D1ED43B83008F3071 /* LinearLayoutTests.m */; };
 		575581591ED43B83008F3071 /* LinearLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 575581581ED43B83008F3071 /* LinearLayoutUITests.m */; };
+		575581691ED43BF6008F3071 /* FFLinearLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 575581681ED43BF6008F3071 /* FFLinearLayout.m */; };
+		5755816D1ED43CF3008F3071 /* LinearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755816B1ED43CF3008F3071 /* LinearCell.m */; };
+		5755816E1ED43CF3008F3071 /* LinearCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5755816C1ED43CF3008F3071 /* LinearCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,11 @@
 		575581541ED43B83008F3071 /* LinearLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinearLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575581581ED43B83008F3071 /* LinearLayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinearLayoutUITests.m; sourceTree = "<group>"; };
 		5755815A1ED43B83008F3071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575581671ED43BF6008F3071 /* FFLinearLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFLinearLayout.h; sourceTree = "<group>"; };
+		575581681ED43BF6008F3071 /* FFLinearLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFLinearLayout.m; sourceTree = "<group>"; };
+		5755816A1ED43CF3008F3071 /* LinearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearCell.h; sourceTree = "<group>"; };
+		5755816B1ED43CF3008F3071 /* LinearCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearCell.m; sourceTree = "<group>"; };
+		5755816C1ED43CF3008F3071 /* LinearCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LinearCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +109,14 @@
 		575581321ED43B83008F3071 /* LinearLayout */ = {
 			isa = PBXGroup;
 			children = (
+				575581661ED43BF6008F3071 /* FFLinearLayout */,
 				575581361ED43B83008F3071 /* AppDelegate.h */,
 				575581371ED43B83008F3071 /* AppDelegate.m */,
 				575581391ED43B83008F3071 /* ViewController.h */,
 				5755813A1ED43B83008F3071 /* ViewController.m */,
+				5755816A1ED43CF3008F3071 /* LinearCell.h */,
+				5755816B1ED43CF3008F3071 /* LinearCell.m */,
+				5755816C1ED43CF3008F3071 /* LinearCell.xib */,
 				5755813C1ED43B83008F3071 /* Main.storyboard */,
 				5755813F1ED43B83008F3071 /* Assets.xcassets */,
 				575581411ED43B83008F3071 /* LaunchScreen.storyboard */,
@@ -138,6 +150,15 @@
 				5755815A1ED43B83008F3071 /* Info.plist */,
 			);
 			path = LinearLayoutUITests;
+			sourceTree = "<group>";
+		};
+		575581661ED43BF6008F3071 /* FFLinearLayout */ = {
+			isa = PBXGroup;
+			children = (
+				575581671ED43BF6008F3071 /* FFLinearLayout.h */,
+				575581681ED43BF6008F3071 /* FFLinearLayout.m */,
+			);
+			path = FFLinearLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +269,7 @@
 			files = (
 				575581431ED43B83008F3071 /* LaunchScreen.storyboard in Resources */,
 				575581401ED43B83008F3071 /* Assets.xcassets in Resources */,
+				5755816E1ED43CF3008F3071 /* LinearCell.xib in Resources */,
 				5755813E1ED43B83008F3071 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,9 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575581691ED43BF6008F3071 /* FFLinearLayout.m in Sources */,
 				5755813B1ED43B83008F3071 /* ViewController.m in Sources */,
 				575581381ED43B83008F3071 /* AppDelegate.m in Sources */,
 				575581351ED43B83008F3071 /* main.m in Sources */,
+				5755816D1ED43CF3008F3071 /* LinearCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

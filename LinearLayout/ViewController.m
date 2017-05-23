@@ -8,21 +8,43 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "FFLinearLayout.h"
 
+#import "LinearCell.h"
+
+#define VIEW_COLOR [UIColor colorWithRed:arc4random() % 256 / 255.0 green:arc4random() % 256 / 255.0 blue:arc4random() % 256 / 255.0 alpha:1.0]
+
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self setupDefault];
 }
 
+#pragma mark - Method
+- (void)setupDefault {
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([LinearCell class]) bundle:nil] forCellWithReuseIdentifier:LinearCellIdentifier];
+    
+    FFLinearLayout *layout = [[FFLinearLayout alloc] init];
+    layout.itemSize = CGSizeMake(200, 400);
+    layout.minimumLineSpacing = 30;
+    layout.sectionInset = UIEdgeInsetsMake(20, 35, 0, 35);
+    self.collectionView.collectionViewLayout = layout;
+}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UICollectionViewDelegate
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    LinearCell *cell = [LinearCell cellWithCollectionView:collectionView withIndexPath:indexPath];
+    cell.backgroundColor = VIEW_COLOR;
+    return cell;
 }
 
 
